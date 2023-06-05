@@ -1,11 +1,14 @@
 use sucos_vendas;
-SELECT EMBALAGEM,
-    AVG(PRECO_DE_LISTA) AS PRECO_MEDIO,
-    CASE
-        WHEN PRECO_DE_LISTA >= 12 THEN 'PRODUTO CARO'
-        WHEN PRECO_DE_LISTA >= 7
-        AND PRECO_DE_LISTA < 12 THEN 'PRODUTO EM CONTA'
-        ELSE 'PRODUTO BARATO'
-    END AS STATUS_PRECO
-FROM tabela_de_produtos
-GROUP BY EMBALAGEM
+select CASE
+        WHEN year(DATA_DE_NASCIMENTO) < 1990 THEN 'Velhos'
+        WHEN year(DATA_DE_NASCIMENTO) between 1990 AND 1995 THEN 'Jovens'
+        ELSE 'Crianças'
+    END AS 'Tipo',
+    count(*) AS Total
+from tabela_de_clientes
+GROUP BY CASE
+        WHEN year(DATA_DE_NASCIMENTO) < 1990 THEN 'Velhos'
+        WHEN year(DATA_DE_NASCIMENTO) between 1990 AND 1995 THEN 'Jovens'
+        ELSE 'Crianças'
+    END
+Order by Total desc
