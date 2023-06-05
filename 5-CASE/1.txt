@@ -1,0 +1,7 @@
+CASE
+    WHEN <condição1> THEN <Valor1>
+    WHEN <condição2> THEN <Valor2>
+    (...)
+    WHEN <condiçãoN> THEN <ValorN>
+    ELSE ValorELSE
+END
