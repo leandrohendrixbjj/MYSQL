@@ -1,4 +1,4 @@
--- FILTRO POR DATA. YEAR --
+-- FILTRO POR DIA --
 DROP DATABASE IF EXISTS estudos;
 CREATE DATABASE IF NOT EXISTS estudos;
 
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS
 );
 
 INSERT INTO pessoas(dt_nasc) VALUES('1983-01-01');
-INSERT INTO pessoas(dt_nasc) VALUES('2000-03-01');
+INSERT INTO pessoas(dt_nasc) VALUES('2000-03-02');
 INSERT INTO pessoas(dt_nasc) VALUES('2001-04-01');
 
-SELECT * FROM pessoas WHERE year(dt_nasc) = 1983;	
+SELECT * FROM pessoas WHERE day(dt_nasc) = 1;	

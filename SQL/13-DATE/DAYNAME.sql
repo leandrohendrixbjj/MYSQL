@@ -1,0 +1,5 @@
+SELECT dayname('2023-01-01') nameDay;
+SELECT DAY(now()) DAY;
+SELECT MONTH(now()) MONTH;
+SELECT MONTHNAME(now()) MONTH;
+SELECT YEAR(now()) YEAR;
