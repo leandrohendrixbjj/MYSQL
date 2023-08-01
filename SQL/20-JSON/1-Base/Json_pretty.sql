@@ -1,14 +1,14 @@
 use estudos;
 DROP TABLE IF exists country;
 CREATE TABLE country(
-    id int auto_increment primary key,
-    name varchar(10),
-    info json
+  id int auto_increment primary key,
+  name varchar(10),
+  info json
 );
 INSERT INTO country(name, info)
 values(
-        'BRA',
-        '{
+    'BRA',
+    '{
   "GNP": 776739,
   "_id": "00005de917d8000000000000001e",
   "Code": "BRA",
@@ -28,6 +28,7 @@ values(
     "LifeExpectancy": 62.900001525878906
   }
 }'
-    );
+  );
+-- Permite um vizual melhor do json    
 select json_pretty(info)
 from country;
