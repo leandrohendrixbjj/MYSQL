@@ -1,3 +1,6 @@
+/*
+  Customização via nome do campo
+*/
 use estudos;
 DROP TABLE IF EXISTS cidades;
 CREATE TABLE cidades(
